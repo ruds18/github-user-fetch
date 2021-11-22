@@ -4,7 +4,7 @@ export default class githubUserInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            image: "", name: "", account: "", id: " ", bio:""
+            image: "", name: "", account: "", id: " ", bio:"", folowers: ""
         }
 
     }
@@ -19,7 +19,8 @@ export default class githubUserInfo extends Component {
             name: response.data.name,
             image: response.data.avatar_url,
             account: response.data.html_url,
-            bio: response.data.bio
+            bio: response.data.bio,
+            folowers: response.data.followers
         })
 
     }
@@ -34,6 +35,7 @@ export default class githubUserInfo extends Component {
                     <img class="card-img-top img-fluid rounded" src={this.state.image} alt="Card image cap" />
                     <div class="card-body">
                         <h5 class="card-title">{this.state.name}</h5>
+                        <p>Followers: {this.state.folowers}</p>
                         <p class="card-text">{this.state.bio}</p>
                         <a href={this.state.account} class="btn btn-primary">visit <i class="fab fa-github-square"></i></a>
                     </div>
