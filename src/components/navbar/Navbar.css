@@ -11,4 +11,10 @@
 
 img{
    height: 80px;
+   border: white;
+   border-radius: 50%;
+   background-color: white;
+}
+.title{
+    color: white;
 }

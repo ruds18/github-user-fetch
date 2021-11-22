@@ -13,7 +13,7 @@ export default class Navbar extends Component {
                     <div className="container">
                         <img className="logo image-fluid" src={logo} alt="logo" />
                         <ul className="nav navbar-nav navbar-right">
-                             <h2>{this.props.title}</h2>
+                             <h2 className="title">{this.props.title}</h2>
                         </ul>
 
                     </div>
