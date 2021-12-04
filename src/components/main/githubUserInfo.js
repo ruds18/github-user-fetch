@@ -12,8 +12,6 @@ export default class githubUserInfo extends Component {
     async componentDidMount() {
         const url = `https://api.github.com/users/${this.props.username}`
         const response = await axios.get(url)
-        console.log(response.data)
-        console.log(this.propsusername)
         this.setState({
             id: response.data.id,
             name: response.data.name,
@@ -32,7 +30,7 @@ export default class githubUserInfo extends Component {
             
             <div className="container d-flex  justify-content-center mb-3">
                 <div class="card" style={{width:"18rem"}}>
-                    <img class="card-img-top img-fluid rounded" src={this.state.image} alt="Card image cap" />
+                    <img class="card-img-top img-fluid rounded" src={this.state.image} alt={this.state.id} />
                     <div class="card-body">
                         <h5 class="card-title">{this.state.name}</h5>
                         <p>Followers: {this.state.folowers}</p>
